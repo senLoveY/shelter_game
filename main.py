@@ -105,9 +105,6 @@ def distribute_roles():
                 my_file.write("Хобби:     "+" ".join(hobby[i])+"\n")
                 my_file.write("Фобия:     "+" ".join(fobia[i])+"\n")
 
-        targetdirectory = "/Users/pavel_arsenovich/Documents/Files/Бункер/bunker_py/players"
-        call(["open", targetdirectory])
-
         for i in range(n):
             image = Image.open("image1.png")
             font = ImageFont.truetype("Arial", 25)
@@ -121,9 +118,6 @@ def distribute_roles():
             drawer.text((270 - (len(" ".join(health[i])) * 5 / 2), 590), " ".join(health[i]), font=font, fill='white')
             drawer.text((270 - (len(" ".join(hobby[i])) * 5 / 2), 668), " ".join(hobby[i]), font=font, fill='white')
             drawer.text((270 - (len(" ".join(fobia[i])) * 5 / 2), 746), " ".join(fobia[i]), font=font, fill='white')
-
-            image.save('players/player'+str(i+1)+'.png')
-            image.show()
 
             image.save('player_cards/player'+str(i+1)+'.png')
         open_folders()
