@@ -6,5 +6,6 @@ You will get 2 folder(text files with roles for each player will be in the folde
 
 So, you should sent cards or text files to your friends and play! Have fun!
 
+You can edit list of roles by editing files in folder "roles".
 
 P.S. In future I will update my project. If you have an idea, how I can do it, please, contact with me.
