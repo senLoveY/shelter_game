@@ -8,9 +8,18 @@ import os
 from PIL import Image, ImageFont, ImageDraw
 
 
+def open_folders():
+    players = "/Users/pavel_arsenovich/Documents/Files/Бункер/bunker_py/players"
+    call(["open", players])
+    player_cards = "/Users/pavel_arsenovich/Documents/Files/Бункер/bunker_py/player_cards"
+    call(["open", player_cards])
+
+
 def delete_everything_in_folder():
     shutil.rmtree('/Users/pavel_arsenovich/Documents/Files/Бункер/bunker_py/players')
     os.mkdir('/Users/pavel_arsenovich/Documents/Files/Бункер/bunker_py/players')
+    shutil.rmtree('/Users/pavel_arsenovich/Documents/Files/Бункер/bunker_py/player_cards')
+    os.mkdir('/Users/pavel_arsenovich/Documents/Files/Бункер/bunker_py/player_cards')
 
 
 def distribute_roles():
@@ -112,8 +121,12 @@ def distribute_roles():
             drawer.text((270 - (len(" ".join(health[i])) * 5 / 2), 590), " ".join(health[i]), font=font, fill='white')
             drawer.text((270 - (len(" ".join(hobby[i])) * 5 / 2), 668), " ".join(hobby[i]), font=font, fill='white')
             drawer.text((270 - (len(" ".join(fobia[i])) * 5 / 2), 746), " ".join(fobia[i]), font=font, fill='white')
+
             image.save('players/player'+str(i+1)+'.png')
             image.show()
+
+            image.save('player_cards/player'+str(i+1)+'.png')
+        open_folders()
 
 
 root = Tk()
